@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="ga">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Na Tuisil — Irish cases, Ulster-first</title>
+<style>
+:root{
+  --ink:#14171c;
+  --ink-2:#1b1f26;
+  --ink-3:#232830;
+  --line:#333a45;
+  --text:#e6e3dc;
+  --dim:#9aa3af;
+  --gold:#d8a13a;
+  --teal:#5fb3a1;
+  --rose:#c9736b;
+  --ga:#f0e7d4;
+  --radius:6px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--text);
+  font:16px/1.6 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+header{
+  border-bottom:1px solid var(--line);
+  padding:26px 20px 18px;
+  background:linear-gradient(180deg,#171b21,#14171c);
+}
+.wrap{max-width:960px;margin:0 auto}
+h1{
+  margin:0;
+  font-size:30px;
+  font-weight:600;
+  letter-spacing:.01em;
+  color:var(--ga);
+}
+h1 span{color:var(--gold)}
+.sub{margin:6px 0 0;color:var(--dim);font-size:14.5px;font-style:italic}
+nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(20,23,28,.96);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+  padding:8px 12px;
+  overflow-x:auto;white-space:nowrap;
+  -webkit-overflow-scrolling:touch;
+}
+nav button{
+  font-family:inherit;font-size:14.5px;
+  background:none;border:1px solid transparent;
+  color:var(--dim);padding:7px 12px;margin:0 1px;
+  border-radius:var(--radius);cursor:pointer;
+}
+nav button:hover{color:var(--text);background:var(--ink-3)}
+nav button.on{color:var(--ink);background:var(--gold);font-weight:600}
+nav button:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+main{padding:24px 20px 80px}
+section{display:none}
+section.on{display:block}
+h2{font-size:23px;margin:8px 0 4px;color:var(--ga);font-weight:600}
+h2 em{color:var(--dim);font-style:italic;font-size:15px;font-weight:400;display:block;margin-top:2px}
+h3{font-size:17.5px;margin:26px 0 8px;color:var(--gold);font-weight:600}
+p{margin:10px 0;max-width:74ch}
+.lead{color:var(--dim)}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--ink-3);color:var(--ga);font-weight:600}
+td.ga,span.ga,li .ga{color:var(--ga)}
+.ga{color:var(--ga)}
+.en{color:var(--dim)}
+code{font:13.5px/1.5 ui-monospace,"SF Mono",Menlo,Consolas,monospace;background:var(--ink-3);padding:1px 5px;border-radius:4px;color:var(--teal)}
+ul,ol{max-width:74ch;padding-left:20px}
+li{margin:6px 0}
+.box{
+  border:1px solid var(--line);border-left:3px solid var(--teal);
+  background:var(--ink-2);border-radius:var(--radius);
+  padding:12px 15px;margin:16px 0;
+}
+.box.warn{border-left-color:var(--rose)}
+.box.hack{border-left-color:var(--gold)}
+.box h4{margin:0 0 6px;font-size:15px;color:var(--ga);font-weight:600}
+.box p{margin:6px 0}
+button.act{
+  font-family:inherit;font-size:14px;
+  background:var(--ink-3);color:var(--text);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:6px 12px;cursor:pointer;
+}
+button.act:hover{border-color:var(--gold);color:var(--ga)}
+button.go{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:600}
+button.go:hover{filter:brightness(1.08);color:var(--ink)}
+.hid{display:none}
+.rev{color:var(--dim);font-size:14.5px;margin-top:4px}
+.pair{border-bottom:1px solid var(--line);padding:12px 0}
+.pair:last-child{border-bottom:0}
+.pair .q{color:var(--ga);font-size:16.5px}
+input[type=text]{
+  font-family:inherit;font-size:16px;
+  background:var(--ink-2);color:var(--ga);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:9px 11px;width:100%;max-width:420px;
+}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.card{
+  border:1px solid var(--line);background:var(--ink-2);
+  border-radius:var(--radius);padding:18px;margin:14px 0;
+}
+.qtext{font-size:20px;color:var(--ga);margin:0 0 4px}
+.qmeta{color:var(--dim);font-size:14px;margin:0 0 14px}
+.fb{margin-top:12px;font-size:15px}
+.ok{color:var(--teal)}
+.no{color:var(--rose)}
+.score{color:var(--dim);font-size:14px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 4px}
+.chips button{font-size:13.5px;padding:5px 10px}
+.chips button.on{background:var(--teal);color:var(--ink);border-color:var(--teal);font-weight:600}
+.flash{
+  min-height:150px;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;cursor:pointer;
+}
+.flash .front{font-size:26px;color:var(--ga)}
+.flash .back{font-size:19px;color:var(--teal);margin-top:10px}
+.stat{display:inline-block;margin:0 22px 10px 0}
+.stat b{display:block;font-size:24px;color:var(--gold);font-weight:600}
+.stat span{color:var(--dim);font-size:13.5px}
+footer{color:var(--dim);font-size:13px;border-top:1px solid var(--line);padding:16px 20px;text-align:center}
+@media (max-width:640px){
+  h1{font-size:24px}
+  main{padding:18px 14px 60px}
+  table{font-size:13.5px}
+  th,td{padding:6px 7px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Na Tuisil <span>·</span> The Irish Cases</h1>
+    <p class="sub">Ainmneach · Cuspóireach · Tabharthach · Ginideach · Gairmeach — Gaeilge Uladh ar dtús</p>
+  </div>
+</header>
+
+<nav class="wrap" id="nav"></nav>
+
+<main class="wrap">
+
+<!-- ============ TUISIL ============ -->
+<section id="tuisil">
+  <h2>Na cúig thuiseal<em>The five cases, and which ones actually change a word</em></h2>
+  <p class="lead">Irish lists five cases. Only <strong>three</strong> change the shape of a noun: nominative (the baseline), genitive, vocative. The accusative and the dative are jobs, not forms.</p>
+
+  <table>
+    <tr><th>Tuiseal</th><th>Case</th><th>Its job</th><th>Does the noun change?</th></tr>
+    <tr><td class="ga">Ainmneach</td><td>Nominative</td><td>Subject; dictionary form</td><td>Baseline</td></tr>
+    <tr><td class="ga">Cuspóireach</td><td>Accusative</td><td>Direct object of a <em>conjugated verb</em></td><td><strong>No</strong> — identical to nominative</td></tr>
+    <tr><td class="ga">Tabharthach</td><td>Dative</td><td>After a simple preposition</td><td><strong>No</strong> — mutation only, plus relics</td></tr>
+    <tr><td class="ga">Ginideach</td><td>Genitive</td><td>Possession, "of", after verbal nouns and compound prepositions</td><td><strong>Yes</strong> — the real work</td></tr>
+    <tr><td class="ga">Gairmeach</td><td>Vocative</td><td>Direct address</td><td><strong>Yes</strong> — lenite, and slenderise</td></tr>
+  </table>
+
+  <div class="box hack">
+    <h4>An chodarsnacht is tábhachtaí — the contrast that earns most marks</h4>
+    <table>
+      <tr><td class="ga">Chuala sé <strong>an chaint</strong></td><td class="en">conjugated verb → object is accusative = nominative form</td></tr>
+      <tr><td class="ga">Bhí sé ag éisteacht <strong>leis an chaint</strong></td><td class="en">verbal noun + simple preposition → dative</td></tr>
+      <tr><td class="ga">Bhí sé ag déanamh <strong>na cainte</strong></td><td class="en">verbal noun + direct object → genitive</td></tr>
+    </table>
+    <p><em>An chaint</em> in the first line is lenited because <em>caint</em> is feminine and follows <em>an</em> — not because of any case ending. Mutation and case are two different systems that happen to meet at the article.</p>
+  </div>
+
+  <h3>Cé acu tuiseal? — a decision procedure</h3>
+  <ol>
+    <li>Is the noun being spoken to? → <strong>gairmeach</strong>. <span class="ga">a Sheáin</span></li>
+    <li>Does an "of" or an apostrophe-s fit in the English? → <strong>ginideach</strong>. <span class="ga">doras an tí</span></li>
+    <li>Is it the object of a <em>verbal noun</em>? → <strong>ginideach</strong>. <span class="ga">ag ól an bhainne</span></li>
+    <li>Does a simple preposition come first? → <strong>tabharthach</strong> (mutation only). <span class="ga">ar an bhord</span></li>
+    <li>Anything else — subject or object of a conjugated verb → <strong>plain nominative form</strong>.</li>
+  </ol>
+</section>
+
+<!-- ============ DÍOCHLAONTA ============ -->
+<section id="diochlaonta">
+  <h2>Na díochlaonta<em>The five declensions — how the genitive singular is built</em></h2>
+
+  <table>
+    <tr><th>Díochlaonadh</th><th>Typical noun</th><th>Rule</th><th>Samplaí</th></tr>
+    <tr>
+      <td><strong>1ú</strong></td><td>masculine, ends in a broad consonant</td>
+      <td><strong>Caolaigh</strong> — slenderise the ending</td>
+      <td class="ga">bád → báid · fear → fir · sagart → sagairt · bealach → bealaigh</td>
+    </tr>
+    <tr>
+      <td><strong>2ú</strong></td><td>feminine, ends in a consonant</td>
+      <td><strong>Caolaigh + -e</strong></td>
+      <td class="ga">cos → coise · bróg → bróige · <span class="en">-each →</span> cailleach → caillí</td>
+    </tr>
+    <tr>
+      <td><strong>3ú</strong></td><td>agent nouns in -óir/-eoir/-úir; abstracts in -acht; mixed</td>
+      <td><strong>Leathnaigh + -a</strong></td>
+      <td class="ga">múinteoir → múinteora · bliain → bliana · rang → ranga · filíocht → filíochta</td>
+    </tr>
+    <tr>
+      <td><strong>4ú</strong></td><td>ends in a vowel, or in -ín</td>
+      <td><strong>Gan athrú</strong> — no change ever</td>
+      <td class="ga">baile → baile · cailín → cailín · oíche → oíche</td>
+    </tr>
+    <tr>
+      <td><strong>5ú</strong></td><td>mostly feminine; ends in a vowel or -ir</td>
+      <td><strong>Leathnaigh + -ach / -n</strong></td>
+      <td class="ga">cathair → cathrach · athair → athar · cara → carad · Éire → Éireann</td>
+    </tr>
+  </table>
+
+  <div class="box hack">
+    <h4>Trí sheift — three shortcuts</h4>
+    <p><strong>Vowel-final is free.</strong> If a noun ends in a vowel or <code>-ín</code>, it is 4th declension and never changes: <span class="ga">an bhaile, an chailín, na hoíche</span>. The 5th-declension nouns that also end in a vowel are a short closed list (<span class="ga">cara, caora, lacha, comharsa, Éire, teanga*</span>) — learn those six and the rule holds.</p>
+    <p><strong>-óir / -eoir / -úir / -acht is always 3rd.</strong> Broaden and add <code>-a</code>. This covers every job title and every abstract noun you will ever need: <span class="ga">an dochtúra, an fheirmeora, na filíochta</span>.</p>
+    <p><strong>Masculine and broad? Try slenderising first.</strong> The 1st declension is the largest class. If <span class="ga">an fear → an fhir</span> feels right by ear, it usually is.</p>
+    <p class="en">* teanga is in fact 4th — no change. It sits in the list only because it looks like the others.</p>
+  </div>
+
+  <h3>Iolra lag agus iolra láidir — weak and strong plurals</h3>
+  <p>The genitive <em>plural</em> depends on which kind of plural the noun has.</p>
+  <table>
+    <tr><th>Cineál</th><th>Test</th><th>Genitive plural</th><th>Sampla</th></tr>
+    <tr><td><strong>Lag</strong> (weak)</td><td>Plural made by slenderising or by adding -a</td><td>Reverts to the <em>nominative singular</em> form, eclipsed after <span class="ga">na</span></td><td class="ga">na fir → obair <strong>na bhfear</strong></td></tr>
+    <tr><td><strong>Láidir</strong> (strong)</td><td>Plural ends in -í, -tha, -anna, -acha, -ta…</td><td>Identical to the nominative plural</td><td class="ga">na ranganna → obair <strong>na ranganna</strong></td></tr>
+  </table>
+  <p class="lead">This is why <span class="ga">rang</span> matters: it is 3rd declension with a <strong>strong</strong> genitive plural — <span class="ga">na ranganna</span>, unchanged.</p>
+
+  <h3>Na hainmfhocail neamhrialta — irregulars worth knowing cold</h3>
+  <table>
+    <tr><th>Ainmneach</th><th>Ginideach</th><th>English</th></tr>
+    <tr><td class="ga">bean</td><td class="ga">mná</td><td class="en">woman</td></tr>
+    <tr><td class="ga">teach</td><td class="ga">tí</td><td class="en">house</td></tr>
+    <tr><td class="ga">deoch</td><td class="ga">dí</td><td class="en">drink</td></tr>
+    <tr><td class="ga">leaba</td><td class="ga">leapa</td><td class="en">bed</td></tr>
+    <tr><td class="ga">talamh</td><td class="ga">talaimh</td><td class="en">ground, land</td></tr>
+    <tr><td class="ga">mí</td><td class="ga">míosa</td><td class="en">month</td></tr>
+    <tr><td class="ga">lá</td><td class="ga">lae</td><td class="en">day</td></tr>
+    <tr><td class="ga">Dia</td><td class="ga">Dé</td><td class="en">God</td></tr>
+    <tr><td class="ga">fuil</td><td class="ga">fola</td><td class="en">blood</td></tr>
+    <tr><td class="ga">grian</td><td class="ga">gréine</td><td class="en">sun</td></tr>
+  </table>
+</section>
+
+<!-- ============ GINIDEACH ============ -->
+<section id="ginideach">
+  <h2>An Ginideach<em>When it fires, and the traps around it</em></h2>
+
+  <h3>Na spreagthaí — the triggers</h3>
+  <ol>
+    <li><strong>Noun + noun.</strong> <span class="ga">doras an tí</span> · <span class="ga">carr an fhir</span></li>
+    <li><strong>After a verbal noun</strong> with a definite object. <span class="ga">ag ól an bhainne</span> · <span class="ga">ag déanamh na hoibre</span></li>
+    <li><strong>After a compound preposition.</strong> <span class="ga">tar éis, i ndiaidh, in aghaidh, in éadan, ar feadh, os cionn, os comhair, ar son, ar fud, i lár, de bharr, in aice</span></li>
+    <li><strong>After certain simple prepositions.</strong> <span class="ga">chun, trasna, timpeall, cois, dála</span> — <span class="ga">chun na scoile</span></li>
+    <li><strong>After quantity words.</strong> <span class="ga">neart, go leor, cuid, roinnt, a lán</span> — <span class="ga">mo chuid airgid</span>, <span class="ga">neart oibre</span></li>
+  </ol>
+
+  <div class="box warn">
+    <h4>An dá eisceacht a bhaineann tuisle asat — the two trip-wires</h4>
+    <p><strong>1. <span class="ga">in aice le</span> takes the dative, not the genitive.</strong> The compound preposition proper is <span class="ga">in aice</span> + genitive (<span class="ga">in aice na scoile</span>). Add <span class="ga">le</span> and you are on a simple preposition, so the noun reverts: <span class="ga">in aice leis an scoil</span>. Same shape as <span class="ga">os comhair an tí</span> versus <span class="ga">os mo chomhair</span>.</p>
+    <p><strong>2. A verbal-noun object that is indefinite <em>and</em> carries an adjective stays nominative.</strong> <span class="ga">ag ceannach carr nua</span> — not <em>cairr nuaidh</em>. No article, adjective attached, genitive collapses.</p>
+  </div>
+
+  <h3>Riail an ghinidigh fhada — the genitive chain</h3>
+  <p>One definite article per chain, and it goes on the <strong>last</strong> noun. Every noun upstream drops its article and lenites where it can.</p>
+  <table>
+    <tr><th>Building it</th><th>Toradh</th></tr>
+    <tr><td>hata + an fear + an teach</td><td class="ga">hata fhear an tí</td></tr>
+    <tr><td>mullach + an cnoc + an baile</td><td class="ga">mullach chnoc an bhaile</td></tr>
+    <tr><td>doras + an teach + an sagart</td><td class="ga">doras thigh an tsagairt</td></tr>
+  </table>
+  <div class="box hack">
+    <h4>Seift</h4>
+    <p>Count the <span class="ga">an</span>s. If you have written two, one of them is wrong.</p>
+  </div>
+
+  <h3>Aidiachtaí sa ghinideach — adjectives</h3>
+  <table>
+    <tr><th>Comhthéacs</th><th>Riail</th><th>Sampla</th></tr>
+    <tr><td>Feminine genitive singular</td><td>Adjective takes the genitive <code>-e</code> form but <strong>no séimhiú</strong></td><td class="ga">obair na mná móire</td></tr>
+    <tr><td>Weak genitive plural</td><td>Adjective completely unchanged</td><td class="ga">cótaí na bhfear mór</td></tr>
+    <tr><td>Strong genitive plural, 1st decl. adjective</td><td>Takes the plural <code>-a</code></td><td class="ga">obair na ranganna móra</td></tr>
+    <tr><td>Strong genitive plural, 3rd decl. adjective</td><td>Invariable</td><td class="ga">na ranganna cliste</td></tr>
+  </table>
+  <p class="lead">The first line is the one people get wrong: the noun lenites after <span class="ga">na</span>… but the adjective does not. <span class="ga">na mná móire</span>, never <em>na mná mhóire</em>.</p>
+</section>
+
+<!-- ============ ALT ============ -->
+<section id="alt">
+  <h2>An tAlt agus na hAthruithe Tosaigh<em>The article and the initial mutations — the whole system on one grid</em></h2>
+
+  <table>
+    <tr><th></th><th>Firinscneach (masc.)</th><th>Baininscneach (fem.)</th></tr>
+    <tr>
+      <td><strong>Ainmneach uatha</strong></td>
+      <td class="ga">an fear — gan athrú<br>t- roimh ghuta: an t-arán</td>
+      <td class="ga">an bhean — séimhiú<br>ts- roimh s+guta/l/n/r: an tsúil<br>gan h roimh ghuta: an oíche</td>
+    </tr>
+    <tr>
+      <td><strong>Ginideach uatha</strong></td>
+      <td class="ga">an fhir — séimhiú<br>ts-: an tsagairt<br>gan t- roimh ghuta: an aráin</td>
+      <td class="ga">na mná — an t-alt "na"<br>gan séimhiú<br>h- roimh ghuta: na hoibre</td>
+    </tr>
+    <tr>
+      <td><strong>Ainmneach iolra</strong></td>
+      <td colspan="2" class="ga">na fir, na mná — gan athrú · h- roimh ghuta: na héin</td>
+    </tr>
+    <tr>
+      <td><strong>Ginideach iolra</strong></td>
+      <td colspan="2" class="ga">na bhfear, na mban — urú i gcónaí · n- roimh ghuta: na n-úll</td>
+    </tr>
+  </table>
+
+  <div class="box hack">
+    <h4>Trí sheift a chlúdaíonn beagnach gach cás</h4>
+    <p><strong>Draw the X.</strong> Feminine lenites in the nominative singular; masculine lenites in the genitive singular. The two genders swap behaviour between the two cases. One diagonal each.</p>
+    <p><strong><span class="ga">na</span> + plural + genitive = urú, always.</strong> No exceptions, no gender split: <span class="ga">obair na bhfear</span>, <span class="ga">praghas na n-úll</span>, <span class="ga">teach na mban</span>.</p>
+    <p><strong>sc-, sp-, sm-, st- block the ts-.</strong> <span class="ga">an scoil, an spéir, an stail</span> — never <em>an tscoil</em>. The cluster cannot be pronounced, so the language never asks for it.</p>
+  </div>
+
+  <div class="box warn">
+    <h4>DNTLS — the letters that refuse séimhiú after <span class="ga">an</span></h4>
+    <p><strong>d</strong> and <strong>t</strong> are never lenited after <span class="ga">an</span>: <span class="ga">an doras → an dorais</span>, <span class="ga">ar an teach</span>. <strong>s</strong> takes <span class="ga">ts-</span> instead of séimhiú. <strong>l, n, r</strong> have no written séimhiú at all, so nothing shows.</p>
+    <p>Say it as one word to fix it: <em>an-doras</em>, <em>an-teach</em>. The tongue is already in position for the d or t, so it will not soften.</p>
+  </div>
+
+  <h3>Uimhreacha — mutations after numbers</h3>
+  <table>
+    <tr><td class="ga">aon, dhá, trí, ceithre, cúig, sé</td><td>+ <strong>séimhiú</strong> + singular noun</td><td class="ga">trí bhád, sé chapall</td></tr>
+    <tr><td class="ga">seacht, ocht, naoi, deich</td><td>+ <strong>urú</strong> + singular noun</td><td class="ga">seacht mbád, deich gcapall</td></tr>
+    <tr><td class="ga">aon … amháin</td><td>no mutation on d, t, s after <span class="ga">aon</span></td><td class="ga">aon doras amháin</td></tr>
+  </table>
+</section>
+
+<!-- ============ TABHARTHACH ============ -->
+<section id="tabharthach">
+  <h2>An Tabharthach<em>The dative, and where Ulster splits from the rest</em></h2>
+
+  <p>Modern Irish has almost no distinct dative form left. What survives is the <strong>mutation after preposition + article</strong> — and this is the clearest dialect fault line in the whole grammar.</p>
+
+  <h3>An riail Ultach</h3>
+  <table>
+    <tr><th></th><th>Ulaidh</th><th>Caighdeán / Connachta / An Mhumhain</th></tr>
+    <tr><td class="en">on the table</td><td class="ga"><strong>ar an bhord</strong></td><td class="ga">ar an mbord</td></tr>
+    <tr><td class="en">with the teacher</td><td class="ga"><strong>leis an mhúinteoir</strong></td><td class="ga">leis an múinteoir</td></tr>
+    <tr><td class="en">at the man</td><td class="ga"><strong>ag an fhear</strong></td><td class="ga">ag an bhfear</td></tr>
+    <tr><td class="en">in the house</td><td class="ga"><strong>sa bhaile</strong></td><td class="ga">sa bhaile</td></tr>
+  </table>
+  <p class="lead">Ulster lenites; the south eclipses. The 2017 Caighdeán now permits the Ulster lenition as a variant, so both are defensible — but be consistent inside one piece of writing.</p>
+
+  <div class="box warn">
+    <h4>Na heisceachtaí</h4>
+    <p><span class="ga">ar an <strong>d</strong>oras</span> · <span class="ga">ar an <strong>t</strong>each</span> — d and t are immune.<br>
+    <span class="ga">ar an <strong>ts</strong>ráid</span> · <span class="ga">ag an <strong>ts</strong>agart</span> — s becomes ts.<br>
+    <span class="ga">ar an <strong>sc</strong>oil</span> — s-clusters take nothing at all.<br>
+    <span class="ga">ag na fir</span> — plural <span class="ga">na</span> triggers no mutation whatsoever.</p>
+  </div>
+
+  <h3>Iarsmaí an tsean-tabharthaigh — the surviving old datives</h3>
+  <p>A handful of feminine nouns kept a real dative form, and they live on in fixed phrases:</p>
+  <p class="ga">in Éirinn · i nDoire · ar an tsráid · ó bhaile · le láimh · ar muin, ar bord, i gcionn</p>
+  <p class="lead"><span class="ga">in Éirinn</span> is the one that has to be automatic — it is the dative of <span class="ga">Éire</span> (genitive <span class="ga">na hÉireann</span>), and all three forms appear constantly.</p>
+
+  <h3>Na forainmneacha réamhfhoclacha — the living dative paradigm</h3>
+  <p>The dative's real survival is in the prepositional pronouns. Ulster forms first, Caighdeán in brackets where they differ.</p>
+  <table>
+    <tr><th></th><th class="ga">ag</th><th class="ga">ar</th><th class="ga">le</th><th class="ga">do</th><th class="ga">as</th></tr>
+    <tr><td>mé</td><td class="ga">agam</td><td class="ga">orm</td><td class="ga">liom</td><td class="ga">domh (dom)</td><td class="ga">asam</td></tr>
+    <tr><td>tú</td><td class="ga">agat</td><td class="ga">ort</td><td class="ga">leat</td><td class="ga">duit</td><td class="ga">asat</td></tr>
+    <tr><td>sé</td><td class="ga">aige</td><td class="ga">air</td><td class="ga">leis</td><td class="ga">dó</td><td class="ga">as</td></tr>
+    <tr><td>sí</td><td class="ga">aici</td><td class="ga">uirthi</td><td class="ga">léi</td><td class="ga">di</td><td class="ga">aisti</td></tr>
+    <tr><td>muid</td><td class="ga">againn</td><td class="ga">orainn</td><td class="ga">linn</td><td class="ga">dúinn</td><td class="ga">asainn</td></tr>
+    <tr><td>sibh</td><td class="ga">agaibh</td><td class="ga">oraibh</td><td class="ga">libh</td><td class="ga">daoibh</td><td class="ga">asaibh</td></tr>
+    <tr><td>siad</td><td class="ga">acu</td><td class="ga">orthu</td><td class="ga">leo</td><td class="ga">dóibh</td><td class="ga">astu</td></tr>
+  </table>
+  <p class="lead">Ulster keeps <span class="ga">domh</span> and prefers <span class="ga">muid</span> over the synthetic <span class="ga">-imid</span> ending in the verb — a rare case where Ulster picks the analytic option.</p>
+</section>
+
+<!-- ============ GAIRMEACH ============ -->
+<section id="gairmeach">
+  <h2>An Gairmeach<em>Vocative — lenite, and slenderise</em></h2>
+
+  <p><span class="ga">a</span> + <strong>séimhiú</strong>. Masculine first-declension names then <strong>slenderise</strong>. Feminine names lenite only.</p>
+
+  <table>
+    <tr><th>Firinscneach — caolú</th><th>Baininscneach — séimhiú amháin</th></tr>
+    <tr><td class="ga">Seán → a Sheáin<br>Brian → a Bhriain<br>Séamas → a Shéamais<br>Mícheál → a Mhíchíl<br>Dónall → a Dhónaill<br>Peadar → a Pheadair</td>
+        <td class="ga">Máire → a Mháire<br>Bríd → a Bhríd<br>Cáit → a Cháit<br>Nóra → a Nóra<br>Síle → a Shíle<br>Úna → a Úna</td></tr>
+  </table>
+
+  <table>
+    <tr><th>Iolra</th><th>Sampla</th></tr>
+    <tr><td>1st declension masculine plural takes <code>-a</code></td><td class="ga">a fheara, a bhuachaillí, a chairde, a dhaoine uaisle</td></tr>
+    <tr><td>Surnames shift too</td><td class="ga">Ó Dónaill → a Uí Dhónaill · Ní Bhriain → a Ní Bhriain</td></tr>
+  </table>
+
+  <div class="box hack">
+    <h4>Íomhá le cuimhneamh air</h4>
+    <p>The vocative <span class="ga">a</span> is a hand reaching out to pull the word towards you: it <em>softens</em> (séimhiú) and it <em>sharpens</em> (caolú). Everything the vocative does follows from that one gesture.</p>
+  </div>
+
+  <div class="box warn">
+    <h4>Botúin choitianta</h4>
+    <p>The <span class="ga">a</span> is <strong>never</strong> dropped in writing, even though speech swallows it. <span class="ga">Dia duit, a Sheáin</span> — not <em>Dia duit, Sheáin</em>.</p>
+    <p>Names beginning with a vowel or with L, N, R show nothing: <span class="ga">a Aoife, a Liam, a Nóra</span>. Nothing visible does not mean nothing happened — the particle is still required.</p>
+  </div>
+</section>
+
+<!-- ============ STRUCHTÚR ============ -->
+<section id="struchtur">
+  <h2>Struchtúr na hAbairte<em>Word order, and where each case sits in it</em></h2>
+
+  <p>Irish is <strong>VSO</strong>: Briathar – Ainmní – Cuspóir, then adverbials in the order <strong>Modh, Áit, Am</strong> — manner, place, time.</p>
+  <div class="box">
+    <p class="ga" style="font-size:18px">Cheannaigh an fear an carr go tapa sa bhaile inné.</p>
+    <p class="en">V — S — O — manner — place — time. English stacks them the same way, so trust your ear on this one, unlike everywhere else.</p>
+  </div>
+
+  <h3>Struchtúir le haistriú — structures to know</h3>
+  <p class="lead">Tap <em>Nocht</em> to show the English.</p>
+  <div id="structures"></div>
+
+  <h3>An chopail — the copula takes the nominative on both sides</h3>
+  <p><span class="ga">Is múinteoir é</span> · <span class="ga">Is í Máire an dochtúir</span> · <span class="ga">Is le Seán an carr</span>. No genitive ever appears here, however much the English "of" tempts you.</p>
+  <p>The <span class="ga">tá + i</span> possessive works the same way: <span class="ga">Tá sé ina fhear mhaith</span> — the lenition comes from <span class="ga">ina</span>, not from case.</p>
+
+  <h3>Frásaí oibre — working phrases</h3>
+  <p class="lead">Copy any line into <a href="https://www.abair.ie" style="color:var(--teal)">abair.ie</a> for the Gaoth Dobhair voice.</p>
+  <div id="phrases"></div>
+</section>
+
+<!-- ============ CLEACHTADH ============ -->
+<section id="cleachtadh">
+  <h2>Cleachtadh<em>Typed drill — fadas normalised, one typo forgiven</em></h2>
+
+  <div class="chips" id="modes"></div>
+  <div class="chips" id="filters"></div>
+
+  <div class="card">
+    <p class="qtext" id="q">—</p>
+    <p class="qmeta" id="qmeta"></p>
+    <div id="answerArea">
+      <div class="row">
+        <input type="text" id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Do fhreagra…">
+        <button class="act go" id="check">Seiceáil</button>
+      </div>
+    </div>
+    <div id="choices" class="chips"></div>
+    <p class="fb" id="fb"></p>
+    <div class="row">
+      <button class="act" id="next">Ar aghaidh</button>
+      <button class="act hid" id="iwasright">Bhí mé ceart</button>
+      <button class="act" id="reveal">Taispeáin</button>
+      <span class="score" id="sc"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AISTRIÚCHÁN ============ -->
+<section id="aistriuchan">
+  <h2>Aistriúchán<em>Translate, then mark yourself</em></h2>
+  <p class="lead">Case work only shows under pressure in full sentences. Write it out, then reveal.</p>
+  <div id="translations"></div>
+</section>
+
+<!-- ============ CÁRTAÍ ============ -->
+<section id="cartai">
+  <h2>Cártaí<em>Flashcards — nominative on the front, genitive on the back</em></h2>
+  <div class="chips" id="cardfilters"></div>
+  <div class="card flash" id="flash">
+    <div class="front" id="cfront">—</div>
+    <div class="back hid" id="cback"></div>
+  </div>
+  <div class="row">
+    <button class="act" id="cflip">Cas an cárta</button>
+    <button class="act go" id="cnext">An chéad cheann eile</button>
+    <span class="score" id="cscore"></span>
+  </div>
+</section>
+
+<!-- ============ SCÓR ============ -->
+<section id="scor">
+  <h2>Scór<em>Progress, stored in this browser only</em></h2>
+  <div id="stats"></div>
+  <h3>Na botúin</h3>
+  <p class="lead">Items you have missed. Each is cleared by two correct answers.</p>
+  <div id="mistakes"></div>
+  <div class="row">
+    <button class="act" id="clearScore">Glan an scór</button>
+  </div>
+</section>
+
+</main>
+
+<footer>Gaeilge Uladh ar dtús · dialect variants flagged where they matter · gan bhrath ar líonra</footer>
+
+<script>
+/* ============================================================
+   SONRAÍ — all content lives in these arrays.
+   n = ainmneach, g = ginideach uatha (gan alt),
+   ag = ginideach uatha leis an alt, gn = f/b (fir/bain),
+   d = díochlaonadh, e = English, note = nóta
+   ============================================================ */
+
+const NOUNS = [
+  /* 1ú díochlaonadh — firinscneach, caolú */
+  {n:"bád", g:"báid", ag:"an bháid", gn:"f", d:"1", e:"boat"},
+  {n:"fear", g:"fir", ag:"an fhir", gn:"f", d:"1", e:"man"},
+  {n:"capall", g:"capaill", ag:"an chapaill", gn:"f", d:"1", e:"horse"},
+  {n:"sagart", g:"sagairt", ag:"an tsagairt", gn:"f", d:"1", e:"priest", note:"s + guta → ts- i ndiaidh an ailt"},
+  {n:"asal", g:"asail", ag:"an asail", gn:"f", d:"1", e:"donkey", note:"guta: gan t- sa ghinideach"},
+  {n:"arán", g:"aráin", ag:"an aráin", gn:"f", d:"1", e:"bread", note:"an t-arán san ainmneach, an aráin sa ghinideach"},
+  {n:"bord", g:"boird", ag:"an bhoird", gn:"f", d:"1", e:"table"},
+  {n:"páipéar", g:"páipéir", ag:"an pháipéir", gn:"f", d:"1", e:"paper"},
+  {n:"peann", g:"pinn", ag:"an phinn", gn:"f", d:"1", e:"pen", note:"guta ag athrú freisin"},
+  {n:"éan", g:"éin", ag:"an éin", gn:"f", d:"1", e:"bird"},
+  {n:"iasc", g:"éisc", ag:"an éisc", gn:"f", d:"1", e:"fish", note:"guta ag athrú: ia → éi"},
+  {n:"leabhar", g:"leabhair", ag:"an leabhair", gn:"f", d:"1", e:"book", note:"l: gan séimhiú le feiceáil"},
+  {n:"ceol", g:"ceoil", ag:"an cheoil", gn:"f", d:"1", e:"music"},
+  {n:"cat", g:"cait", ag:"an chait", gn:"f", d:"1", e:"cat"},
+  {n:"oileán", g:"oileáin", ag:"an oileáin", gn:"f", d:"1", e:"island"},
+  {n:"bealach", g:"bealaigh", ag:"an bhealaigh", gn:"f", d:"1", e:"way, route", note:"-ach → -aigh"},
+  {n:"scéal", g:"scéil", ag:"an scéil", gn:"f", d:"1", e:"story", note:"sc-: gan séimhiú riamh"},
+  {n:"béal", g:"béil", ag:"an bhéil", gn:"f", d:"1", e:"mouth"},
+  {n:"doras", g:"dorais", ag:"an dorais", gn:"f", d:"1", e:"door", note:"d: gan séimhiú i ndiaidh an ailt"},
+  {n:"gasúr", g:"gasúir", ag:"an ghasúir", gn:"f", d:"1", e:"boy, child (Ulaidh)"},
+  {n:"margadh", g:"margaidh", ag:"an mhargaidh", gn:"f", d:"1", e:"market"},
+  {n:"focal", g:"focail", ag:"an fhocail", gn:"f", d:"1", e:"word"},
+  {n:"solas", g:"solais", ag:"an tsolais", gn:"f", d:"1", e:"light"},
+  {n:"airgead", g:"airgid", ag:"an airgid", gn:"f", d:"1", e:"money, silver"},
+  {n:"saol", g:"saoil", ag:"an tsaoil", gn:"f", d:"1", e:"life, world"},
+  {n:"rialtas", g:"rialtais", ag:"an rialtais", gn:"f", d:"1", e:"government"},
+  {n:"amadán", g:"amadáin", ag:"an amadáin", gn:"f", d:"1", e:"fool"},
+  {n:"briathar", g:"briathair", ag:"an bhriathair", gn:"f", d:"1", e:"verb"},
+
+  /* 2ú díochlaonadh — baininscneach, caolú + -e */
+  {n:"cos", g:"coise", ag:"na coise", gn:"b", d:"2", e:"foot, leg"},
+  {n:"bróg", g:"bróige", ag:"na bróige", gn:"b", d:"2", e:"shoe"},
+  {n:"fuinneog", g:"fuinneoige", ag:"na fuinneoige", gn:"b", d:"2", e:"window"},
+  {n:"scoil", g:"scoile", ag:"na scoile", gn:"b", d:"2", e:"school"},
+  {n:"cluas", g:"cluaise", ag:"na cluaise", gn:"b", d:"2", e:"ear"},
+  {n:"gealach", g:"gealaí", ag:"na gealaí", gn:"b", d:"2", e:"moon", note:"-ach → -aí"},
+  {n:"báisteach", g:"báistí", ag:"na báistí", gn:"b", d:"2", e:"rain", note:"-each → -í"},
+  {n:"craobh", g:"craoibhe", ag:"na craoibhe", gn:"b", d:"2", e:"branch"},
+  {n:"long", g:"loinge", ag:"na loinge", gn:"b", d:"2", e:"ship"},
+  {n:"sráid", g:"sráide", ag:"na sráide", gn:"b", d:"2", e:"street"},
+  {n:"áit", g:"áite", ag:"na háite", gn:"b", d:"2", e:"place", note:"guta → h- i ndiaidh na"},
+  {n:"obair", g:"oibre", ag:"na hoibre", gn:"b", d:"2", e:"work", note:"coimriú: obair → oibre"},
+  {n:"muc", g:"muice", ag:"na muice", gn:"b", d:"2", e:"pig"},
+  {n:"coill", g:"coille", ag:"na coille", gn:"b", d:"2", e:"wood, forest"},
+  {n:"fearg", g:"feirge", ag:"na feirge", gn:"b", d:"2", e:"anger"},
+  {n:"cistin", g:"cistine", ag:"na cistine", gn:"b", d:"2", e:"kitchen"},
+  {n:"girseach", g:"girsí", ag:"na girsí", gn:"b", d:"2", e:"girl (Ulaidh)"},
+  {n:"lámh", g:"láimhe", ag:"na láimhe", gn:"b", d:"2", e:"hand"},
+  {n:"carraig", g:"carraige", ag:"na carraige", gn:"b", d:"2", e:"rock"},
+
+  /* 3ú díochlaonadh — leathnú + -a */
+  {n:"múinteoir", g:"múinteora", ag:"an mhúinteora", gn:"f", d:"3", e:"teacher"},
+  {n:"dochtúir", g:"dochtúra", ag:"an dochtúra", gn:"f", d:"3", e:"doctor", note:"d: gan séimhiú"},
+  {n:"feirmeoir", g:"feirmeora", ag:"an fheirmeora", gn:"f", d:"3", e:"farmer"},
+  {n:"siopadóir", g:"siopadóra", ag:"an tsiopadóra", gn:"f", d:"3", e:"shopkeeper"},
+  {n:"bliain", g:"bliana", ag:"na bliana", gn:"b", d:"3", e:"year"},
+  {n:"rang", g:"ranga", ag:"an ranga", gn:"f", d:"3", e:"class", note:"iolra láidir: ginideach iolra = na ranganna"},
+  {n:"am", g:"ama", ag:"an ama", gn:"f", d:"3", e:"time"},
+  {n:"droim", g:"droma", ag:"an droma", gn:"f", d:"3", e:"back"},
+  {n:"buachaill", g:"buachalla", ag:"an bhuachalla", gn:"f", d:"3", e:"boy"},
+  {n:"dath", g:"datha", ag:"an datha", gn:"f", d:"3", e:"colour"},
+  {n:"cith", g:"ceatha", ag:"an cheatha", gn:"f", d:"3", e:"shower (of rain)"},
+  {n:"anam", g:"anama", ag:"an anama", gn:"f", d:"3", e:"soul"},
+  {n:"loch", g:"locha", ag:"an locha", gn:"f", d:"3", e:"lake"},
+  {n:"filíocht", g:"filíochta", ag:"na filíochta", gn:"b", d:"3", e:"poetry"},
+  {n:"gluaiseacht", g:"gluaiseachta", ag:"na gluaiseachta", gn:"b", d:"3", e:"movement"},
+  {n:"beannacht", g:"beannachta", ag:"na beannachta", gn:"b", d:"3", e:"blessing"},
+  {n:"iarracht", g:"iarrachta", ag:"na hiarrachta", gn:"b", d:"3", e:"attempt"},
+
+  /* 4ú díochlaonadh — gan athrú */
+  {n:"baile", g:"baile", ag:"an bhaile", gn:"f", d:"4", e:"town, home"},
+  {n:"cailín", g:"cailín", ag:"an chailín", gn:"f", d:"4", e:"girl", note:"firinscneach, cé gur cailín é"},
+  {n:"oíche", g:"oíche", ag:"na hoíche", gn:"b", d:"4", e:"night"},
+  {n:"siopa", g:"siopa", ag:"an tsiopa", gn:"f", d:"4", e:"shop"},
+  {n:"garda", g:"garda", ag:"an gharda", gn:"f", d:"4", e:"guard, policeman"},
+  {n:"tae", g:"tae", ag:"an tae", gn:"f", d:"4", e:"tea"},
+  {n:"teanga", g:"teanga", ag:"na teanga", gn:"b", d:"4", e:"language, tongue"},
+  {n:"rúnaí", g:"rúnaí", ag:"an rúnaí", gn:"f", d:"4", e:"secretary"},
+  {n:"féile", g:"féile", ag:"na féile", gn:"b", d:"4", e:"festival"},
+  {n:"hata", g:"hata", ag:"an hata", gn:"f", d:"4", e:"hat"},
+
+  /* 5ú díochlaonadh — leathnú + -ach / -n */
+  {n:"cathair", g:"cathrach", ag:"na cathrach", gn:"b", d:"5", e:"city"},
+  {n:"athair", g:"athar", ag:"an athar", gn:"f", d:"5", e:"father"},
+  {n:"máthair", g:"máthar", ag:"na máthar", gn:"b", d:"5", e:"mother"},
+  {n:"deirfiúr", g:"deirféar", ag:"na deirféar", gn:"b", d:"5", e:"sister"},
+  {n:"cara", g:"carad", ag:"an charad", gn:"f", d:"5", e:"friend"},
+  {n:"Éire", g:"Éireann", ag:"na hÉireann", gn:"b", d:"5", e:"Ireland", note:"tabharthach: in Éirinn"},
+  {n:"beoir", g:"beorach", ag:"na beorach", gn:"b", d:"5", e:"beer"},
+  {n:"litir", g:"litreach", ag:"na litreach", gn:"b", d:"5", e:"letter"},
+  {n:"abhainn", g:"abhann", ag:"na habhann", gn:"b", d:"5", e:"river"},
+  {n:"caora", g:"caorach", ag:"na caorach", gn:"b", d:"5", e:"sheep"},
+  {n:"lacha", g:"lachan", ag:"na lachan", gn:"b", d:"5", e:"duck"},
+  {n:"comharsa", g:"comharsan", ag:"na comharsan", gn:"b", d:"5", e:"neighbour"},
+  {n:"traein", g:"traenach", ag:"na traenach", gn:"b", d:"5", e:"train"},
+  {n:"cathaoir", g:"cathaoireach", ag:"na cathaoireach", gn:"b", d:"5", e:"chair"},
+  {n:"bráthair", g:"bráthar", ag:"an bhráthar", gn:"f", d:"5", e:"brother (religious)"},
+
+  /* Neamhrialta */
+  {n:"bean", g:"mná", ag:"na mná", gn:"b", d:"neamh", e:"woman", note:"ginideach iolra: na mban"},
+  {n:"teach", g:"tí", ag:"an tí", gn:"f", d:"neamh", e:"house"},
+  {n:"deoch", g:"dí", ag:"na dí", gn:"b", d:"neamh", e:"drink"},
+  {n:"leaba", g:"leapa", ag:"na leapa", gn:"b", d:"neamh", e:"bed"},
+  {n:"talamh", g:"talaimh", ag:"an talaimh", gn:"f", d:"neamh", e:"ground, land", note:"talún freisin, go háirithe sa chiall 'land'"},
+  {n:"mí", g:"míosa", ag:"na míosa", gn:"b", d:"neamh", e:"month"},
+  {n:"lá", g:"lae", ag:"an lae", gn:"f", d:"neamh", e:"day"},
+  {n:"fuil", g:"fola", ag:"na fola", gn:"b", d:"neamh", e:"blood"},
+  {n:"grian", g:"gréine", ag:"na gréine", gn:"b", d:"neamh", e:"sun"},
+  {n:"Dia", g:"Dé", ag:"Dé", gn:"f", d:"neamh", e:"God", note:"gan alt: Lá Fhéile Pádraig, oíche Dé Sathairn"}
+];
+
+/* Réamhfhocal + alt — foirmeacha Ultacha */
+const PREPS = [
+  {q:"ar + an bord", a:["ar an bhord"], note:"Caighdeán: ar an mbord"},
+  {q:"ag + an fear", a:["ag an fhear"], note:"Caighdeán: ag an bhfear"},
+  {q:"le + an múinteoir", a:["leis an mhúinteoir"], note:"le + an = leis an. Caighdeán: leis an múinteoir"},
+  {q:"ar + an doras", a:["ar an doras"], note:"d: gan séimhiú, gan urú"},
+  {q:"ar + an teach", a:["ar an teach"], note:"t: gan athrú"},
+  {q:"ar + an sráid", a:["ar an tsráid"], note:"s + guta/l/n/r → ts-"},
+  {q:"ag + an sagart", a:["ag an tsagart"], note:"ts- arís"},
+  {q:"ar + an scoil", a:["ar an scoil"], note:"sc-: ní féidir ts- ná séimhiú"},
+  {q:"as + an spéir", a:["as an spéir"], note:"sp-: gan athrú"},
+  {q:"i + an baile", a:["sa bhaile"], note:"i + an = sa, agus séimhiú ina dhiaidh"},
+  {q:"i + an teach", a:["sa teach"], note:"sa + t: gan athrú"},
+  {q:"i + an siopa", a:["sa tsiopa"], note:"sa + s → ts-"},
+  {q:"ó + an baile", a:["ón bhaile"], note:"ó + an = ón"},
+  {q:"faoi + an bord", a:["faoin bhord"], note:"faoi + an = faoin"},
+  {q:"do + an fear", a:["don fhear"], note:"do + an = don, séimhiú i ngach canúint"},
+  {q:"de + an capall", a:["den chapall"], note:"de + an = den, séimhiú i ngach canúint"},
+  {q:"roimh + an cluiche", a:["roimh an chluiche"], note:"Caighdeán: roimh an gcluiche"},
+  {q:"thar + an balla", a:["thar an bhalla"], note:"Caighdeán: thar an mballa"},
+  {q:"chuig + an dochtúir", a:["chuig an dochtúir"], note:"d: gan athrú"},
+  {q:"ag + na fir", a:["ag na fir"], note:"iolra: gan athrú ar bith i ndiaidh na"},
+  {q:"i measc + na fir (gin. iolra)", a:["i measc na bhfear"], note:"ginideach iolra i ndiaidh réamhfhocail chomhshuite: urú"},
+  {q:"os cionn + an teach", a:["os cionn an tí"], note:"réamhfhocal comhshuite → ginideach"},
+  {q:"tar éis + an dinnéar", a:["tar éis an dinnéir"], note:"comhshuite → ginideach"},
+  {q:"in aice + le + an scoil", a:["in aice leis an scoil"], note:"le san áireamh → tabharthach, ní ginideach"},
+  {q:"in aice + an scoil", a:["in aice na scoile"], note:"gan le → comhshuite → ginideach"}
+];
+
+/* Gairmeach */
+const VOCS = [
+  {q:"Seán", a:["a Sheáin"]},
+  {q:"Brian", a:["a Bhriain"]},
+  {q:"Séamas", a:["a Shéamais"]},
+  {q:"Mícheál", a:["a Mhíchíl"]},
+  {q:"Dónall", a:["a Dhónaill"]},
+  {q:"Peadar", a:["a Pheadair"]},
+  {q:"Pádraig", a:["a Phádraig"], note:"caol cheana féin"},
+  {q:"Liam", a:["a Liam"], note:"L: gan séimhiú le feiceáil"},
+  {q:"Máire", a:["a Mháire"], note:"baininscneach: séimhiú amháin"},
+  {q:"Bríd", a:["a Bhríd"]},
+  {q:"Cáit", a:["a Cháit"]},
+  {q:"Síle", a:["a Shíle"]},
+  {q:"Úna", a:["a Úna"], note:"guta: gan athrú le feiceáil"},
+  {q:"fear (uatha)", a:["a fhir"]},
+  {q:"fear (iolra)", a:["a fheara"], note:"1ú díochlaonadh: -a san iolra"},
+  {q:"cara (uatha)", a:["a chara"]},
+  {q:"cara (iolra)", a:["a chairde"]},
+  {q:"buachaill (uatha)", a:["a bhuachaill"]},
+  {q:"buachaill (iolra)", a:["a bhuachaillí"]},
+  {q:"mac", a:["a mhic"]},
+  {q:"sagart", a:["a shagairt"]},
+  {q:"máthair", a:["a mháthair"]},
+  {q:"Ó Dónaill", a:["a Uí Dhónaill"]},
+  {q:"daoine uaisle", a:["a dhaoine uaisle"]}
+];
+
+/* Struchtúir le haistriú */
+const STRUCTURES = [
+  {ga:"Chuala mé an chaint ar an raidió.", en:"I heard the talk on the radio.", note:"an chaint = cuspóireach (foirm an ainmnigh); séimhiú toisc gur focal baininscneach é i ndiaidh an ailt"},
+  {ga:"Bhí mé ag éisteacht leis an chaint.", en:"I was listening to the talk.", note:"réamhfhocal simplí → tabharthach; séimhiú Ultach"},
+  {ga:"Bhí mé ag déanamh na hoibre.", en:"I was doing the work.", note:"cuspóir an ainm bhriathartha → ginideach"},
+  {ga:"Tá teach an tsagairt ar bharr an chnoic.", en:"The priest's house is on top of the hill.", note:"dhá shlabhra ghinideacha, alt amháin an ceann"},
+  {ga:"Hata fhear an tí.", en:"The householder's hat.", note:"riail an ghinidigh fhada: leanann an t-alt an focal deireanach"},
+  {ga:"Chuaigh sí chun na scoile go luath.", en:"She went to school early.", note:"chun → ginideach"},
+  {ga:"Tá siad ina gcónaí in aice leis an scoil.", en:"They live beside the school.", note:"in aice le → tabharthach"},
+  {ga:"Tá an siopa in aice na scoile.", en:"The shop is beside the school.", note:"in aice gan le → ginideach"},
+  {ga:"Bhí sé ag ceannach carr nua.", en:"He was buying a new car.", note:"cuspóir éiginnte + aidiacht, gan alt → ainmneach"},
+  {ga:"Tar éis an dinnéir, chuaigh muid amach.", en:"After dinner, we went out.", note:"réamhfhocal comhshuite → ginideach"},
+  {ga:"Dia duit, a Sheáin, cad é mar atá tú?", en:"Hello, Seán, how are you?", note:"gairmeach + beannú Ultach"},
+  {ga:"Is é obair na bhfear an talamh a threabhadh.", en:"The men's work is to plough the land.", note:"ginideach iolra → urú i ndiaidh na"},
+  {ga:"Tá mé i mo chónaí in Éirinn le bliain.", en:"I have been living in Ireland for a year.", note:"in Éirinn = iarsma an tabharthaigh"},
+  {ga:"Cheannaigh an fear an carr go tapa sa bhaile inné.", en:"The man bought the car quickly in town yesterday.", note:"VSO + modh, áit, am"}
+];
+
+const PHRASES = [
+  {ga:"Cad é an t-ainm atá ar an fhear sin?", en:"What is that man's name?"},
+  {ga:"Tá carr an mhúinteora taobh amuigh den scoil.", en:"The teacher's car is outside the school."},
+  {ga:"Ar mhaith leat cupán tae i ndiaidh na hoibre?", en:"Would you like a cup of tea after work?"},
+  {ga:"Chonaic mé solas na gealaí ar an fharraige.", en:"I saw the moonlight on the sea."},
+  {ga:"Tá muintir na háite iontach cineálta.", en:"The local people are very kind."},
+  {ga:"Bhí sé ag caint faoi stair na tíre.", en:"He was talking about the country's history."}
+];
+
+const TRANSLATIONS = [
+  {en:"The woman's house is at the top of the street.", ga:"Tá teach na mná ar bharr na sráide."},
+  {en:"I was reading the priest's letter.", ga:"Bhí mé ag léamh litir an tsagairt."},
+  {en:"Hello, Máire — did you hear the news?", ga:"Dia duit, a Mháire — ar chuala tú an scéala?"},
+  {en:"He put the book on the table.", ga:"Chuir sé an leabhar ar an bhord."},
+  {en:"They live beside the church.", ga:"Tá siad ina gcónaí in aice leis an teampall."},
+  {en:"The men's work is finished.", ga:"Tá obair na bhfear críochnaithe."},
+  {en:"She was buying a big house.", ga:"Bhí sí ag ceannach teach mór."},
+  {en:"After the rain, the colour of the sky changed.", ga:"I ndiaidh na báistí, d'athraigh dath na spéire."},
+  {en:"I have been living in Ireland for a month.", ga:"Tá mé i mo chónaí in Éirinn le mí."},
+  {en:"The children of the town were at the door of the shop.", ga:"Bhí páistí an bhaile ag doras an tsiopa."}
+];
+
+/* ============================================================
+   LOGIC
+   ============================================================ */
+
+const TABS = [
+  ["tuisil","Tuisil"],["diochlaonta","Díochlaonta"],["ginideach","Ginideach"],
+  ["alt","An tAlt"],["tabharthach","Tabharthach"],["gairmeach","Gairmeach"],
+  ["struchtur","Struchtúr"],["cleachtadh","Cleachtadh"],["aistriuchan","Aistriúchán"],
+  ["cartai","Cártaí"],["scor","Scór"]
+];
+
+const $ = id => document.getElementById(id);
+const KEY = "na-tuisil-v1";
+
+let store = {stats:{}, missed:{}};
+try { const raw = localStorage.getItem(KEY); if (raw) store = Object.assign(store, JSON.parse(raw)); } catch(e){}
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(store)); } catch(e){} }
+
+/* ---- tabs ---- */
+const nav = $("nav");
+TABS.forEach(([id,label],i) => {
+  const b = document.createElement("button");
+  b.textContent = label;
+  b.onclick = () => show(id);
+  b.dataset.for = id;
+  nav.appendChild(b);
+});
+function show(id){
+  TABS.forEach(([t]) => {
+    $(t).classList.toggle("on", t === id);
+    nav.querySelector('[data-for="'+t+'"]').classList.toggle("on", t === id);
+  });
+  if (id === "scor") renderStats();
+  window.scrollTo({top:0});
+}
+
+/* ---- freagra a mheaitseáil ---- */
+function norm(s){
+  return (s||"")
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+    .replace(/[^a-z\s]/g," ")
+    .replace(/\s+/g," ")
+    .trim();
+}
+function lev(a,b){
+  const m=a.length,n=b.length;
+  if(!m) return n; if(!n) return m;
+  let prev=Array.from({length:n+1},(_,j)=>j), cur=new Array(n+1);
+  for(let i=1;i<=m;i++){
+    cur[0]=i;
+    for(let j=1;j<=n;j++){
+      cur[j]=Math.min(prev[j]+1, cur[j-1]+1, prev[j-1]+(a[i-1]===b[j-1]?0:1));
+    }
+    [prev,cur]=[cur,prev];
+  }
+  return prev[n];
+}
+function matches(given, accepted){
+  const g = norm(given);
+  if(!g) return false;
+  return accepted.some(a => { const x = norm(a); return g === x || lev(g,x) <= 1; });
+}
+
+/* ---- ceisteanna a thógáil ---- */
+function keyOf(mode,q){ return mode+"::"+q; }
+
+function bankFor(mode){
+  if(mode === "gin") return NOUNS.map(w => ({
+    key: keyOf("gin", w.n),
+    q: "an " + w.n,
+    meta: (w.gn === "f" ? "firinscneach" : "baininscneach") + " · " + (w.d === "neamh" ? "neamhrialta" : w.d + "ú díochlaonadh") + " · " + w.e,
+    ask: "An ginideach uatha, leis an alt.",
+    a: [w.ag, w.g],
+    show: w.ag + (w.note ? "  —  " + w.note : ""),
+    d: w.d
+  }));
+  if(mode === "alt") return PREPS.map(p => ({
+    key: keyOf("alt", p.q),
+    q: p.q,
+    meta: "Foirm Uladh.",
+    ask: "Scríobh an frása iomlán.",
+    a: p.a,
+    show: p.a[0] + (p.note ? "  —  " + p.note : ""),
+    d: "alt"
+  }));
+  if(mode === "gair") return VOCS.map(v => ({
+    key: keyOf("gair", v.q),
+    q: v.q,
+    meta: "An gairmeach, leis an mhír a.",
+    ask: "",
+    a: v.a,
+    show: v.a[0] + (v.note ? "  —  " + v.note : ""),
+    d: "gair"
+  }));
+  /* mode dio: ilrogha */
+  return NOUNS.map(w => ({
+    key: keyOf("dio", w.n),
+    q: w.n,
+    meta: w.e + " · " + (w.gn === "f" ? "firinscneach" : "baininscneach"),
+    ask: "Cén díochlaonadh?",
+    a: [w.d === "neamh" ? "Neamhrialta" : w.d + "ú"],
+    show: (w.d === "neamh" ? "Neamhrialta" : w.d + "ú díochlaonadh") + " · ginideach: " + w.g,
+    d: w.d,
+    choice: true
+  }));
+}
+
+const MODES = [["gin","Ginideach"],["alt","Réamhfhocal + alt"],["gair","Gairmeach"],["dio","Cén díochlaonadh?"]];
+const DFILTERS = [["uile","Uile"],["1","1ú"],["2","2ú"],["3","3ú"],["4","4ú"],["5","5ú"],["neamh","Neamhrialta"],["botuin","Na botúin"]];
+const SFILTERS = [["uile","Uile"],["botuin","Na botúin"]];
+
+let mode = "gin", filter = "uile", queue = [], current = null, answered = false;
+
+function renderChips(){
+  const mw = $("modes"); mw.innerHTML = "";
+  MODES.forEach(([m,label]) => {
+    const b = document.createElement("button"); b.className = "act" + (m===mode?" on":"");
+    b.textContent = label; b.onclick = () => { mode = m; filter = "uile"; renderChips(); build(); };
+    mw.appendChild(b);
+  });
+  const fw = $("filters"); fw.innerHTML = "";
+  const set = (mode==="gin"||mode==="dio") ? DFILTERS : SFILTERS;
+  set.forEach(([f,label]) => {
+    const b = document.createElement("button"); b.className = "act" + (f===filter?" on":"");
+    b.textContent = label; b.onclick = () => { filter = f; renderChips(); build(); };
+    fw.appendChild(b);
+  });
+}
+
+function refill(){
+  let bank = bankFor(mode);
+  if(filter === "botuin") bank = bank.filter(x => store.missed[x.key]);
+  else if(filter !== "uile") bank = bank.filter(x => x.d === filter);
+  queue = bank.slice().sort(() => Math.random() - 0.5);
+  return queue.length;
+}
+
+function build(){
+  if(!refill()){
+    current = null;
+    $("q").textContent = "Níl aon cheist anseo.";
+    $("qmeta").textContent = filter === "botuin" ? "Gan botúin sa mhód seo — dea-scéal." : "";
+    $("choices").innerHTML = ""; $("fb").textContent = ""; $("ans").value = "";
+    $("sc").textContent = "";
+    return;
+  }
+  nextQ();
+}
+
+function nextQ(){
+  if(!queue.length) refill();
+  if(!queue.length) return;
+  current = queue.shift();
+  answered = false;
+  $("q").textContent = current.q;
+  $("qmeta").textContent = current.meta + (current.ask ? " — " + current.ask : "");
+  $("fb").textContent = "";
+  $("ans").value = "";
+  $("iwasright").classList.add("hid");
+  const ch = $("choices"); ch.innerHTML = "";
+  if(current.choice){
+    $("answerArea").classList.add("hid");
+    ["1ú","2ú","3ú","4ú","5ú","Neamhrialta"].forEach(opt => {
+      const b = document.createElement("button"); b.className = "act";
+      b.textContent = opt; b.onclick = () => grade(opt);
+      ch.appendChild(b);
+    });
+  } else {
+    $("answerArea").classList.remove("hid");
+    $("ans").focus();
+  }
+  updateScore();
+}
+
+function grade(given){
+  if(answered) return;
+  const right = current.choice ? (given === current.a[0]) : matches(given, current.a);
+  answered = true;
+  const s = store.stats[mode] || (store.stats[mode] = {r:0,w:0});
+  if(right){
+    s.r++;
+    $("fb").innerHTML = '<span class="ok">Ceart. ' + current.show + '</span>';
+    if(store.missed[current.key]){
+      store.missed[current.key]--;
+      if(store.missed[current.key] <= 0) delete store.missed[current.key];
+    }
+  } else {
+    s.w++;
+    $("fb").innerHTML = '<span class="no">Mícheart.</span> ' + current.show;
+    store.missed[current.key] = 2;
+    queue.push(current);
+    $("iwasright").classList.remove("hid");
+  }
+  save(); updateScore();
+}
+
+function updateScore(){
+  const s = store.stats[mode] || {r:0,w:0};
+  const t = s.r + s.w;
+  $("sc").textContent = t ? s.r + "/" + t + " ceart (" + Math.round(100*s.r/t) + "%)" : "";
+}
+
+$("check").onclick = () => grade($("ans").value);
+$("ans").addEventListener("keydown", e => {
+  if(e.key === "Enter"){ e.preventDefault(); if(answered) nextQ(); else grade($("ans").value); }
+});
+$("next").onclick = nextQ;
+$("reveal").onclick = () => {
+  if(!current) return;
+  if(!answered){
+    answered = true;
+    const s = store.stats[mode] || (store.stats[mode] = {r:0,w:0});
+    s.w++; store.missed[current.key] = 2; queue.push(current); save(); updateScore();
+  }
+  $("fb").innerHTML = '<span class="no">Freagra:</span> ' + current.show;
+};
+$("iwasright").onclick = () => {
+  const s = store.stats[mode] || (store.stats[mode] = {r:0,w:0});
+  s.w--; s.r++;
+  delete store.missed[current.key];
+  queue = queue.filter(x => x.key !== current.key);
+  save(); updateScore();
+  $("fb").innerHTML = '<span class="ok">Marcáilte mar cheart. ' + current.show + '</span>';
+  $("iwasright").classList.add("hid");
+};
+
+/* ---- struchtúir agus frásaí ---- */
+function revealBlock(container, items, front, back, note){
+  const wrap = $(container); wrap.innerHTML = "";
+  items.forEach((it,i) => {
+    const d = document.createElement("div"); d.className = "pair";
+    const q = document.createElement("div"); q.className = "q ga"; q.textContent = it[front];
+    const b = document.createElement("button"); b.className = "act"; b.textContent = "Nocht";
+    b.style.marginTop = "8px";
+    const r = document.createElement("div"); r.className = "rev hid";
+    r.innerHTML = it[back] + (note && it[note] ? '<br><span class="en">' + it[note] + '</span>' : "");
+    b.onclick = () => { r.classList.toggle("hid"); b.textContent = r.classList.contains("hid") ? "Nocht" : "Folaigh"; };
+    d.append(q,b,r); wrap.appendChild(d);
+  });
+}
+revealBlock("structures", STRUCTURES, "ga", "en", "note");
+
+/* frásaí + cóipeáil */
+(function(){
+  const wrap = $("phrases"); wrap.innerHTML = "";
+  PHRASES.forEach(p => {
+    const d = document.createElement("div"); d.className = "pair";
+    const q = document.createElement("div"); q.className = "q ga"; q.textContent = p.ga;
+    const e = document.createElement("div"); e.className = "rev"; e.textContent = p.en;
+    const b = document.createElement("button"); b.className = "act"; b.textContent = "Cóipeáil";
+    b.style.marginTop = "8px";
+    b.onclick = () => {
+      navigator.clipboard.writeText(p.ga).then(
+        () => { b.textContent = "Cóipeáilte"; setTimeout(()=>b.textContent="Cóipeáil",1400); },
+        () => { b.textContent = "Theip air"; setTimeout(()=>b.textContent="Cóipeáil",1400); }
+      );
+    };
+    d.append(q,e,b); wrap.appendChild(d);
+  });
+})();
+
+/* ---- aistriúchán ---- */
+(function(){
+  const wrap = $("translations"); wrap.innerHTML = "";
+  TRANSLATIONS.forEach(t => {
+    const d = document.createElement("div"); d.className = "pair";
+    const q = document.createElement("div"); q.className = "q"; q.textContent = t.en;
+    const inp = document.createElement("input"); inp.type = "text"; inp.placeholder = "Scríobh i nGaeilge…";
+    inp.style.marginTop = "8px";
+    const r = document.createElement("div"); r.className = "rev hid ga"; r.textContent = t.ga;
+    const b = document.createElement("button"); b.className = "act"; b.textContent = "Nocht";
+    b.style.marginTop = "8px";
+    b.onclick = () => { r.classList.toggle("hid"); b.textContent = r.classList.contains("hid") ? "Nocht" : "Folaigh"; };
+    inp.addEventListener("keydown", e => { if(e.key === "Enter"){ e.preventDefault(); b.click(); } });
+    d.append(q,inp,b,r); wrap.appendChild(d);
+  });
+})();
+
+/* ---- cártaí ---- */
+let cardFilter = "uile", cardDeck = [], cardIdx = 0;
+function buildCards(){
+  let bank = NOUNS.slice();
+  if(cardFilter === "botuin") bank = bank.filter(w => store.missed[keyOf("gin", w.n)]);
+  else if(cardFilter !== "uile") bank = bank.filter(w => w.d === cardFilter);
+  cardDeck = bank.sort(() => Math.random() - 0.5);
+  cardIdx = 0;
+  showCard();
+}
+function showCard(){
+  const c = cardDeck[cardIdx];
+  $("cback").classList.add("hid");
+  if(!c){ $("cfront").textContent = "Folamh"; $("cback").textContent = ""; $("cscore").textContent = ""; return; }
+  $("cfront").textContent = "an " + c.n;
+  $("cback").innerHTML = c.ag + '<br><span class="en">' + c.e + " · " +
+    (c.d === "neamh" ? "neamhrialta" : c.d + "ú díochlaonadh") + (c.note ? " · " + c.note : "") + "</span>";
+  $("cscore").textContent = (cardIdx+1) + "/" + cardDeck.length;
+}
+$("cflip").onclick = () => $("cback").classList.toggle("hid");
+$("flash").onclick = () => $("cback").classList.toggle("hid");
+$("cnext").onclick = (e) => { e.stopPropagation(); cardIdx = (cardIdx+1) % Math.max(cardDeck.length,1); showCard(); };
+(function(){
+  const wrap = $("cardfilters");
+  DFILTERS.forEach(([f,label]) => {
+    const b = document.createElement("button"); b.className = "act" + (f===cardFilter?" on":"");
+    b.textContent = label;
+    b.onclick = () => {
+      cardFilter = f;
+      wrap.querySelectorAll("button").forEach(x => x.classList.remove("on"));
+      b.classList.add("on");
+      buildCards();
+    };
+    wrap.appendChild(b);
+  });
+})();
+
+/* ---- scór ---- */
+function renderStats(){
+  const wrap = $("stats"); wrap.innerHTML = "";
+  let anyData = false;
+  MODES.forEach(([m,label]) => {
+    const s = store.stats[m]; if(!s || !(s.r + s.w)) return;
+    anyData = true;
+    const t = s.r + s.w;
+    const d = document.createElement("div"); d.className = "stat";
+    d.innerHTML = "<b>" + Math.round(100*s.r/t) + "%</b><span>" + label + " · " + s.r + "/" + t + "</span>";
+    wrap.appendChild(d);
+  });
+  if(!anyData) wrap.innerHTML = '<p class="lead">Gan scór go fóill. Tosaigh leis an gCleachtadh.</p>';
+
+  const mw = $("mistakes"); mw.innerHTML = "";
+  const keys = Object.keys(store.missed);
+  if(!keys.length){ mw.innerHTML = '<p class="lead">Gan botúin ar bith.</p>'; return; }
+  const ul = document.createElement("ul");
+  keys.forEach(k => {
+    const [m,q] = k.split("::");
+    const label = (MODES.find(x => x[0] === m) || [,m])[1];
+    const li = document.createElement("li");
+    li.innerHTML = '<span class="ga">' + q + '</span> <span class="en">· ' + label + '</span>';
+    ul.appendChild(li);
+  });
+  mw.appendChild(ul);
+}
+$("clearScore").onclick = () => {
+  if(!confirm("An scór agus na botúin uilig a ghlanadh?")) return;
+  store = {stats:{}, missed:{}}; save(); renderStats(); updateScore();
+};
+
+/* ---- tosú ---- */
+renderChips();
+build();
+buildCards();
+show("tuisil");
+</script>
+</body>
+</html>
